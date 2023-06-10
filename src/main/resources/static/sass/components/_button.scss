@@ -1,0 +1,29 @@
+button {
+  cursor: pointer;
+  user-select: none;
+  border: none;
+  outline: none;
+  padding: 3rem 12rem;
+  border-radius: 1.2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  box-shadow: 0 0.4rem 0.8rem 0 #00000033, 0 0.6rem 2rem 0 #00000030;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transition: all 0.1s ease;
+    transform: scale(1.05);
+  }
+}
+
+.take-quiz-btn {
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  color: #1b5ace;
+}

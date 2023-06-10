@@ -1,0 +1,47 @@
+.description {
+  user-select: none;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.homepage-grid {
+  .create-quiz {
+    background-image: linear-gradient(to bottom right, #08c8b3, #7255e8);
+    grid-area: create-quiz;
+    button {
+      background-image: linear-gradient(to bottom right, #093586, #789fe7);
+    }
+  }
+  .quizzes {
+    background-image: linear-gradient(to bottom right, #4320d2, #7255e8);
+    grid-area: quizzes;
+    button {
+      background-image: linear-gradient(to bottom right, #917ce8, #4d399d);
+    }
+  }
+  .find-quiz {
+    background-image: linear-gradient(to bottom right, #ffd10a, #917ce8);
+    grid-area: find-quiz;
+    button {
+      background-image: linear-gradient(to bottom right, #789fe7, #ffe678);
+    }
+  }
+  .create-quiz,
+  .quizzes,
+  .find-quiz {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20rem;
+    border-radius: 1.2rem;
+  }
+
+  display: grid;
+  grid-template-areas:
+    "create-quiz create-quiz"
+    "quizzes find-quiz";
+  align-items: center;
+  justify-content: center;
+  grid-auto-columns: 1fr;
+  gap: 2rem;
+}

@@ -1,0 +1,42 @@
+.quiz-end-box {
+  border: 0.1rem solid #e5e5e5;
+  border-radius: 1.2rem;
+  padding: 2rem;
+
+  h2,
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .quiz-name,
+  .author {
+    margin-bottom: 0.5rem;
+    a {
+      color: blue;
+    }
+  }
+  .score {
+    margin-bottom: 7rem;
+  }
+
+  .button-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  button {
+    max-width: 40rem;
+    padding: 1rem 2rem;
+    margin-bottom: 3rem;
+    color: #222222;
+    font-size: 1.8rem;
+  }
+}

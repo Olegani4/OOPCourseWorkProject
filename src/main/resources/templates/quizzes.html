@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>Quizzes</title>
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/media/QQ-favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/media/QQ-favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/media/QQ-favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/media/QQ-favicon/site.webmanifest">
+    <link rel="mask-icon" href="/static/media/QQ-favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+      rel="stylesheet"
+    />
+    <script src="/static/script/script-sort-filter.js" defer></script>
+    <script src="/static/script/post-request.js"></script>
+  </head>
+  <body>
+  <header th:insert="~{fragments/header :: ${headerType}}">
+  </header>
+    <main>
+      <h1>Quizzes</h1>
+      <section class="sort-filter">
+        <span>
+          <select id="select-sort" onchange="sortQuizzes()">
+            <option value="" disabled selected>Sort by</option>
+            <option value="ascending">A-z</option>
+            <option value="descending">z-A</option>
+            <option value="max-likes">Max likes first</option>
+            <option value="min-likes">Min likes first</option>
+            <option value="max-questions">Max questions first</option>
+            <option value="min-questions">Min questions first</option>
+          </select>
+        </span>
+        <span>
+          <select id="select-filter" onchange="filterQuizzes()">
+            <option value="" disabled selected>Filter by topic</option>
+            <option value="showAll">Show all</option>
+            <option th:each="topic : ${topics}" th:text="${topic.title}"
+                    th:attr="value=|${topic.title}|"></option>
+          </select>
+        </span>
+      </section>
+      <section class="my-quizzes">
+        <div th:each="quiz : ${quizzes}" th:attr="style=|background-color: ${quiz.background_hex};|" class="quiz">
+          <div class="quiz-info">
+            <div class="left-info">
+              <p><b th:text="${quiz.topic_title}"></b></p>
+              <p th:text="${quiz.name}"></p>
+            </div>
+            <div class="right-info">
+              <p>Questions:&nbsp;<b th:text="${quiz.questions_num}"></b></p>
+              <p>Likes:&nbsp;<b th:text="${quiz.likes}"></b></p>
+            </div>
+          </div>
+          <div class="quiz-options">
+            <span th:text="${quiz.author_name}" th:attr="onclick=|authorQuizzes('${quiz.author_name}')|" ></span>
+            <button class="take-quiz-btn"
+                    th:attr="onclick=|window.open('/quiz/${quiz.id}/${userId}', '_self')|">Take quiz</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  <footer th:insert="~{fragments/footer :: footer}">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+.cookiesContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  background: #0a1c3e;
+  position: fixed;
+  bottom: 0;
+  padding: 24px 16px;
+  z-index: 999999;
+}
+
+.textCookie {
+  font: 400 16px/22px Inter;
+  color: #ffffff;
+}
+
+.buttonCookie {
+  width: 80px;
+  height: 40px;
+  border-radius: 8px;
+  background: #ffffff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 11pt;
+  margin-left: 12px;
+}
+
+.buttonCookie:active {
+  transform: scale(0.9);
+}
+
+@media (min-width: 0px) and (max-width: 625px) {
+  .cookiesContainer {
+    width: auto;
+  }
+}

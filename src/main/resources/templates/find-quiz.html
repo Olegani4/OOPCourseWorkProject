@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>Find Quiz</title>
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/media/QQ-favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/media/QQ-favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/media/QQ-favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/media/QQ-favicon/site.webmanifest">
+    <link rel="mask-icon" href="/static/media/QQ-favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+      rel="stylesheet"
+    />
+    <script src="/static/script/post-request.js"></script>
+  </head>
+  <body>
+  <header th:insert="~{fragments/header :: ${headerType}}">
+  </header>
+    <main>
+      <section class="find-quiz">
+        <div class="find-quiz-box">
+          <div>
+            <h2>Find quiz by its name</h2>
+            <input type="search" placeholder="Quiz name" id="quiz-name" />
+          </div>
+          <div>
+            <h2>Find quiz by its author</h2>
+            <input type="search" placeholder="Author name" id="author-name" />
+          </div>
+          <div>
+            <input type="submit" value="Find quiz" onclick="findQuiz()"/>
+          </div>
+        </div>
+      </section>
+    </main>
+  <footer th:insert="~{fragments/footer :: footer}">
+  </footer>
+  </body>
+</html>

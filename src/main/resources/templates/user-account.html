@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>My Account</title>
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/media/QQ-favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/media/QQ-favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/media/QQ-favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/media/QQ-favicon/site.webmanifest">
+    <link rel="mask-icon" href="/static/media/QQ-favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+  <header th:insert="~{fragments/header :: headerUser}">
+  </header>
+    <main>
+      <h1>My account</h1>
+      <section class="account">
+        <div class="info">
+          <p><span class="title">Name: </span><span th:text="${userData.login}"></span></p>
+          <p><span class="title">E-mail: </span><span th:text="${userData.email}"></span></p>
+          <p><span class="title">Password: </span>∗∗∗∗∗∗∗</p>
+          <p style="margin-top: 3rem;"><a class="title" href="/" style="color: blue">Logout</a></p>
+        </div>
+        <div class="photo-div">
+          <img
+                  th:attr="src=|${userData.image}|"
+            src="/static/media/user-photo-default.svg"
+            alt="user"
+            width="150"
+            class="photo"
+          />
+        </div>
+      </section>
+      <section class="edit-account"></section>
+    </main>
+  <footer th:insert="~{fragments/footer :: footer}">
+  </footer>
+  </body>
+</html>

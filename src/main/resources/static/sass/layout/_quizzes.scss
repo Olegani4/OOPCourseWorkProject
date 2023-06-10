@@ -1,0 +1,57 @@
+.sort-filter {
+  display: flex;
+  justify-content: right;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.my-quizzes {
+  .quiz {
+    border: 1px solid #e5e5e5;
+    border-radius: 1.2rem;
+    padding: 1.5rem;
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    .quiz-info {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 5rem;
+      margin-bottom: 2rem;
+
+      .left-info {
+        p {
+          &:first-child {
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+
+      .right-info {
+        p {
+          display: flex;
+          justify-content: right;
+
+          &:first-child {
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+    }
+    .quiz-options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 3rem;
+
+      span {
+        user-select: none;
+        cursor: pointer;
+        color: #1b5ace;
+        font-weight: 500;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+dialog {
+  z-index: 10;
+  padding: 2rem 4rem 4rem 4rem;
+  background: #fff;
+  outline: none;
+  border: 0.1rem solid #ccc;
+  border-radius: 1.2rem;
+  width: 90vw;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .dialog-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  .a-choices {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .dialog-flex-margin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .gap-2rem {
+    gap: 2rem;
+  }
+
+  .answer-tf {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: 0.1rem solid #e5e5e5;
+    border-radius: 1.2rem;
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+      border-color: blue;
+    }
+  }
+
+  .btn-flex {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      color: #000;
+      font-weight: 500;
+      padding: 1rem 2rem;
+    }
+  }
+
+  .width-50 {
+    width: 50%;
+  }
+}

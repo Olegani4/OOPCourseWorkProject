@@ -1,0 +1,49 @@
+header {
+  user-select: none;
+  position: fixed;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  align-items: center;
+  height: 7rem;
+  background-color: white;
+  z-index: 999999;
+
+  border-bottom: 0.1rem solid #e5e5e5;
+
+  .logo {
+    cursor: pointer;
+    display: flex;
+    justify-content: left;
+    margin-left: 1rem;
+  }
+  .navigation {
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+
+      li {
+        font-weight: 500;
+        a {
+          transition: all 0.3s ease;
+          &:hover {
+            color: #1b5ace;
+            font-weight: 800;
+          }
+        }
+      }
+    }
+  }
+  .account {
+    display: flex;
+    justify-content: right;
+    margin-right: 3rem;
+    span {
+      a {
+        font-weight: 600;
+      }
+    }
+  }
+}

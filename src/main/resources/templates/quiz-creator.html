@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>Create Quiz</title>
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/media/QQ-favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/media/QQ-favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/media/QQ-favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/media/QQ-favicon/site.webmanifest">
+    <link rel="mask-icon" href="/static/media/QQ-favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="/static/css/style.css"/>
+    <link
+            href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+            rel="stylesheet"
+    />
+    <script src="/static/script/script-quiz-creator.js" defer></script>
+    <script src="/static/script/post-request.js"></script>
+</head>
+<body>
+<header th:insert="~{fragments/header :: ${headerType}}">
+</header>
+<main>
+    <h1>Create quiz</h1>
+    <section class="quiz-creator">
+        <div class="quiz-info">
+            <p class="main-info-text"><b>Quiz main info</b></p>
+            <div>
+                <input type="text" name="name" id="name" placeholder="Quiz title"/>
+            </div>
+            <p>Topic</p>
+            <div>
+                <select name="topics" id="topics">
+                  <option th:each="topic : ${topics}" th:text="${topic.title}"
+                          th:attr="value=|${topic.title}|"></option>
+                </select>
+            </div>
+            <p>Background</p>
+            <div>
+                <select name="backgrounds" id="backgrounds">
+                  <option th:each="background : ${backgrounds}" th:text="${background.name}"
+                          th:attr="value=|${background.hex_code}|"></option>
+                </select>
+            </div>
+            <p>Time limit for question</p>
+            <div>
+                <select name="time-limit" id="time-limit">
+                    <option value="5">5 seconds</option>
+                    <option value="15">15 seconds</option>
+                    <option value="30">30 seconds</option>
+                    <option value="60">1 minute</option>
+                    <option value="180">3 minutes</option>
+                </select>
+            </div>
+        </div>
+        <div class="question-options">
+            <p class="choice-text"><b>Select question type</b></p>
+            <div class="options">
+                <div class="option" onclick="openDialog('dialog-true-false')">
+                    <p>True/False</p>
+                </div>
+                <div class="option" onclick="openDialog('dialog-mult-choice')">
+                    <p>Multiple choice</p>
+                </div>
+            </div>
+        </div>
+        <div class="questions" id="question-list">
+        </div>
+        <div class="create-quiz-btn-div">
+            <input
+                    type="submit"
+                    name="create-quiz"
+                    id="create-quiz"
+                    value="Create quiz"
+                    onclick="createQuiz()"
+                    th:attr="onclick=|createQuiz('${user.login}', '${user.email}')|"
+            />
+        </div>
+    </section>
+    <dialog id="dialog-true-false">
+        <p class="dialog-title">True/false</p>
+        <p>Question</p>
+        <div class="dialog-flex-margin">
+            <input
+                    type="text"
+                    class="width-50"
+                    id="question-tf"
+                    placeholder="Your question..."
+            />
+        </div>
+        <p>Answer</p>
+        <div class="dialog-flex-margin gap-2rem">
+            <div>
+            <span
+                    class="answer-tf"
+                    id="answer-tf-true"
+                    onclick="trueFalseCheckbox(true)"
+            >True</span
+            >
+            </div>
+            <div>
+            <span
+                    class="answer-tf"
+                    id="answer-tf-false"
+                    onclick="trueFalseCheckbox(false)"
+            >False</span
+            >
+            </div>
+        </div>
+        <div class="btn-flex">
+            <button onclick="addQuestion('tf')">Add question</button>
+        </div>
+    </dialog>
+    <dialog id="dialog-mult-choice">
+        <p class="dialog-title">Multiple choice</p>
+        <p>Question</p>
+        <div class="dialog-flex-margin">
+            <input
+                    type="text"
+                    class="width-50"
+                    id="question-mc"
+                    placeholder="Your question..."
+            />
+        </div>
+        <div>
+            <p>Answer choices</p>
+            <div class="a-choices">
+                <input
+                        type="text"
+                        id="a-choice-1"
+                        placeholder="Answer 1"
+                        maxlength="75"
+                />
+                <input
+                        type="text"
+                        id="a-choice-2"
+                        placeholder="Answer 2"
+                        maxlength="75"
+                />
+                <input
+                        type="text"
+                        id="a-choice-3"
+                        placeholder="Answer 3"
+                        maxlength="75"
+                />
+                <input
+                        type="text"
+                        id="a-choice-4"
+                        placeholder="Answer 4"
+                        maxlength="75"
+                />
+            </div>
+        </div>
+        <p>Correct answer</p>
+        <div class="dialog-flex-margin">
+            <input
+                    class="width-50"
+                    type="text"
+                    id="correct-a-choice"
+                    placeholder="Write correct answer..."
+            />
+        </div>
+        <div class="btn-flex">
+            <button onclick="addQuestion('mc')">Add question</button>
+        </div>
+    </dialog>
+</main>
+<footer th:insert="~{fragments/footer :: footer}">
+</footer>
+</body>
+</html>

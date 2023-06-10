@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1"
+  />
+  <title>Homepage</title>
+  <link rel="apple-touch-icon" sizes="60x60" href="/static/media/QQ-favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/media/QQ-favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/media/QQ-favicon/favicon-16x16.png">
+  <link rel="manifest" href="/static/media/QQ-favicon/site.webmanifest">
+  <link rel="mask-icon" href="/static/media/QQ-favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <link
+          href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+          rel="stylesheet"
+  />
+</head>
+<body>
+<header th:insert="~{fragments/header :: ${headerType}}">
+</header>
+<main>
+  <section class="description">
+    <span>🔥</span>
+    <h2>Test Your Knowledge in a Flash!</h2>
+    <span>🔥</span>
+  </section>
+  <section class="homepage-grid">
+    <div class="create-quiz"><button th:attr="onclick=|window.open('/create-quiz/${userId}', '_self')|">Create a quiz</button></div>
+    <div class="quizzes"><button th:attr="onclick=|window.open('/quizzes/${userId}', '_self')|">Quizzes</button></div>
+    <div class="find-quiz"><button th:attr="onclick=|window.open('/find-quiz/${userId}', '_self')|">Find a quiz</button></div>
+  </section>
+</main>
+<footer th:insert="~{fragments/footer :: footer}">
+</footer>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>Quiz results</title>
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/media/QQ-favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/media/QQ-favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/media/QQ-favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/media/QQ-favicon/site.webmanifest">
+    <link rel="mask-icon" href="/static/media/QQ-favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+      rel="stylesheet"
+    />
+    <script src="/static/script/script-quiz-question.js"></script>
+    <script src="/static/script/post-request.js"></script>
+  </head>
+  <body>
+  <header th:insert="~{fragments/header :: ${headerType}}">
+  </header>
+    <main>
+      <section class="quiz-end-box" th:attr="style=|background-color: ${quiz.background_hex};|">
+        <h2><span id="phrase"></span>&nbsp;<span th:text="${name}"></span>!</h2>
+
+        <script>
+          getPhrase([[${score}]], [[${questionNum}]], 'phrase')
+        </script>
+        <p class="quiz-name">Quiz name:&nbsp;<b th:text="${quiz.name}"></b></p>
+        <p class="author">
+          Author:&nbsp;
+          <a target="_self" style="cursor: text"><b th:text="${quiz.author_name}"></b></a>
+        </p>
+
+        <p class="score">Your score:&nbsp;<b><span th:text="${score}"></span>/<span th:text="${questionNum}"></span></b></p>
+
+        <div class="button-flex">
+          <button style="background-color: rgba(156, 156, 247, 0.466)" onclick="returnToQuizStart()">
+            Back to quiz start
+          </button>
+        </div>
+      </section>
+
+    </main>
+  <script>
+    function returnToQuizStart() {
+      const url = window.location.href;
+      const modifiedUrl = url.replace(/\/[^/]+\/[^/]+\/[^/]+$/, "");
+      window.open(modifiedUrl + '/', "_self");
+    }
+
+  </script>
+  <footer th:insert="~{fragments/footer :: footer}">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+.log-in {
+  display: flex;
+  justify-content: center;
+  .box {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to bottom, #1c00b8, #789fe7);
+    box-shadow: 0 0.4rem 0.8rem 0 #00000033, 0 0.6rem 2rem 0 #00000030;
+    padding: 2rem;
+    border-radius: 1.2rem;
+
+    .logo {
+      user-select: none;
+    }
+
+    span {
+      display: flex;
+      justify-content: center;
+    }
+
+    div {
+      display: flex;
+      justify-content: center;
+    }
+
+    span:last-child {
+      color: #fff;
+      a {
+        user-select: none;
+        font-weight: 600;
+        color: #29d4ff;
+      }
+    }
+  }
+}

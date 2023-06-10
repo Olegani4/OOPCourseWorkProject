@@ -1,0 +1,46 @@
+<th:block xmlns:th="http://www.thymeleaf.org" th:fragment="headerUser">
+        <div class="logo">
+            <img
+                    src="/static/media/QQ-Logo.svg"
+                    alt="logo"
+                    width="200"
+                    th:attr="onclick=|window.open('/${userId}', '_self')|"
+            />
+        </div>
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a th:attr="href=|/${userId}|" target="_self">Homepage</a>
+                </li>
+                <li><a th:attr="href=|/quizzes/${userId}|" target="_self">Quizzes</a></li>
+                <li><a th:attr="href=|/create-quiz/${userId}|" target="_self">Create quiz</a></li>
+                <li><a th:attr="href=|/my-quizzes/${userId}|" target="_self">My quizzes</a></li>
+            </ul>
+        </div>
+        <div class="account">
+            <span><a th:attr="href=|/my-account/${userId}|" target="_self">My account</a></span>
+        </div>
+</th:block>
+
+<th:block xmlns:th="http://www.thymeleaf.org" th:fragment="headerNotUser">
+    <div class="logo">
+        <img
+                src="/static/media/QQ-Logo.svg"
+                alt="logo"
+                width="200"
+                onclick="window.open('/', '_self')"
+        />
+    </div>
+    <div class="navigation">
+        <ul>
+            <li>
+                <a href="/" target="_self">Homepage</a>
+            </li>
+            <li><a href="/quizzes" target="_self">Quizzes</a></li>
+            <li><a href="/create-quiz" target="_self">Create quiz</a></li>
+        </ul>
+    </div>
+    <div class="account">
+        <span><a href="/log-in" target="_self">Log in</a></span>
+    </div>
+</th:block>

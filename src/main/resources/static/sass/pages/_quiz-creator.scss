@@ -1,0 +1,123 @@
+.quiz-creator {
+  select {
+    width: 20rem;
+  }
+  .quiz-info {
+    border: 0.1rem solid #e5e5e5;
+    border-radius: 1.2rem;
+    padding: 2rem;
+    margin-bottom: 3rem;
+
+    .main-info-text {
+      margin-bottom: 2rem;
+    }
+
+    input {
+      border-color: #ccc;
+      width: 50%;
+    }
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    p {
+      text-align: center;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+  }
+  .question-options {
+    border: 0.1rem solid #e5e5e5;
+    border-radius: 1.2rem;
+    padding: 2rem;
+    margin-bottom: 3rem;
+
+    .choice-text {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .options {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: 2rem;
+
+      .option {
+        border: 0.1rem solid #ccc;
+        border-radius: 1.2rem;
+        padding: 1rem 2rem;
+        user-select: none;
+        cursor: pointer;
+        transition: 0.1s all ease-in-out;
+
+        &:hover {
+          border: none;
+          background-color: #2121f3;
+          color: white;
+        }
+        &:active {
+          transform: scale(0.95);
+        }
+      }
+    }
+  }
+
+  .questions {
+    .question {
+      position: relative;
+      border: 0.1rem solid #e5e5e5;
+      border-radius: 1.2rem;
+      margin-bottom: 2rem;
+      padding: 1rem 7rem 1rem 2rem;
+
+      div {
+        display: inline-block;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        border-bottom: 0.1rem solid black;
+        padding-bottom: 0.4rem;
+      }
+
+      .cross {
+        position: absolute;
+        top: 0.9rem;
+        right: 1.7rem;
+        user-select: none;
+        cursor: pointer;
+      }
+
+      .edit {
+        position: absolute;
+        bottom: 0.9rem;
+        right: 1.7rem;
+        user-select: none;
+        cursor: pointer;
+        color: #2121f3;
+      }
+    }
+  }
+
+  .create-quiz-btn-div {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+
+    input {
+      cursor: pointer;
+      transition: 0.1s all ease-in-out;
+
+      &:hover {
+        border-color: #2121f3;
+        background-color: #2121f3;
+        color: white;
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+  }
+}

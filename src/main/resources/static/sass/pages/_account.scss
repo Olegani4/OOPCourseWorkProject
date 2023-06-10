@@ -1,0 +1,26 @@
+.account {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  .info {
+    p:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+    .title {
+      font-weight: 500;
+      user-select: none;
+    }
+  }
+  .photo-div {
+    display: flex;
+    justify-content: right;
+
+    .photo {
+      border: 1px solid #e5e5e5;
+      box-shadow: 0 0.4rem 0.8rem 0 #00000033, 0 0.6rem 2rem 0 #00000030;
+      border-radius: 100%;
+    }
+  }
+}
+
+.edit-account {
+}

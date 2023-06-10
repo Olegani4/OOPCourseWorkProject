@@ -1,0 +1,14 @@
+{
+  "name": "token-list",
+  "version": "1.0.0",
+  "description": "token-list",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass src/main/resources/static/sass/main.scss node-sass src/main/resources/static/css/style.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^8.0.0"
+  }
+}

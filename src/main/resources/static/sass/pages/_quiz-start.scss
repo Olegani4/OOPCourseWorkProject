@@ -1,0 +1,42 @@
+.quiz-start-box {
+  border: 0.1rem solid #e5e5e5;
+  border-radius: 1.2rem;
+  padding: 2rem;
+  .info {
+    display: flex;
+    gap: 4rem;
+    justify-content: space-between;
+    margin-bottom: 8rem;
+
+    .quiz-left-info {
+      div:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+
+      div:last-child {
+        a {
+          color: blue;
+        }
+      }
+    }
+    .quiz-right-info {
+      div {
+        text-align: right;
+      }
+      div:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  .enter-name-input,
+  .start-quiz-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  .submit{
+    font-weight: 500;
+  }
+}
+

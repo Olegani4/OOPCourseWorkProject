@@ -1,0 +1,19 @@
+input {
+  outline: none;
+  border: 1px solid #e5e5e5;
+  padding: 1rem 2rem;
+  border-radius: 1.2rem;
+  text-align: center;
+}
+
+.submit {
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.1s ease;
+  width: 15rem;
+  background-color: #e5e5e5;
+
+  &:active {
+    transform: scale(0.95);
+  }
+}

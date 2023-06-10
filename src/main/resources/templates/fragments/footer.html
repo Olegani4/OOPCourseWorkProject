@@ -1,0 +1,51 @@
+<th:block xmlns:th="http://www.thymeleaf.org" th:fragment="footer">
+    <div class="contacts">
+        <ul>
+            <li>
+                <a th:attr="href=|/${userId}|" >Homepage</a>
+                <a href="https://www.facebook.com/" target="_blank"
+                >Facebook
+                    <img
+                            src="/static/media/social-media/facebook.svg"
+                            alt="fb-logo"
+                            width="35"
+                    /></a>
+            </li>
+            <li>
+                <a th:attr="href=|/quizzes/${userId}|" >Quizzes</a>
+                <a href="https://twitter.com/" target="_blank"
+                >Twitter
+                    <img
+                            src="/static/media/social-media/twitter.svg"
+                            alt="twit-logo"
+                            width="35"
+                    /></a>
+            </li>
+            <li>
+                <a th:attr="href=|/create-quiz/${userId}|" >Create quiz</a>
+                <a href="https://www.instagram.com/" target="_blank"
+                >Instagram
+                    <img
+                            src="/static/media/social-media/instagram.svg"
+                            alt="inst-logo"
+                            width="35"
+                    /></a>
+            </li>
+            <li>
+                <a href="/sign-in">Create new account</a>
+                <a href="https://t.me/quick-quiz-support" target="_blank"
+                >Support
+                    <img
+                            src="/static/media/social-media/support.svg"
+                            alt="twit-logo"
+                            width="35"
+                    />
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="copyrights">
+        <p>© Quick Quiz 2023</p>
+        <p>All rights reserved</p>
+    </div>
+</th:block>
