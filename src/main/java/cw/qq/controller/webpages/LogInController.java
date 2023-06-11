@@ -31,6 +31,7 @@ public class LogInController {
     }
 
     // Handles POST requests for "/log-in" endpoint
+    @PostMapping("/log-in")
     public ModelAndView getLogIn(@RequestBody UserRequest userRequest, RedirectAttributes redirectAttributes) {
         String login = userRequest.getLogin();
         String password = userRequest.getPassword();
