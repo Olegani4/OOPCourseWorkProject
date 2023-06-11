@@ -1,3 +1,4 @@
+// Function to sort quizzes based on the selected sorting value
 function sortQuizzes() {
     // Retrieve the sorting value from the select element
     let selectSort = document.getElementById("select-sort");
@@ -58,5 +59,31 @@ function sortQuizzes() {
     // Append the sorted quizzes back to the container
     for (let i = 0; i < sortedQuizzes.length; i++) {
         quizSection.appendChild(sortedQuizzes[i]);
+    }
+}
+
+// Function to filter quizzes based on the filter input
+function filterQuizzes() {
+    // Get the selected topic from the dropdown
+    let selectedTopic = document.getElementById("select-filter").value;
+
+    // Get all the quiz elements
+    let quizzes = document.getElementsByClassName("quiz");
+
+    // Loop through each quiz element
+    for (let i = 0; i < quizzes.length; i++) {
+        let quiz = quizzes[i];
+
+        // Get the topic of the quiz from the first paragraph element in the left-info section
+        let quizTopic = quiz.querySelector(".left-info p:first-child").innerText;
+
+        // Check if the selected topic is empty, "showAll", or matches the quiz topic
+        if (selectedTopic === "" || selectedTopic === "showAll" || quizTopic === selectedTopic) {
+            // If the conditions are met, display the quiz
+            quiz.style.display = "block";
+        } else {
+            // If the conditions are not met, hide the quiz
+            quiz.style.display = "none";
+        }
     }
 }
